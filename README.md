@@ -13,7 +13,7 @@ Sitio web estático con datos sobre consumo de tabaco en Argentina y un simulado
 
 Proyecto estático de un solo archivo, sin build:
 
-- [`tabaco.html`](tabaco.html) — sitio completo (HTML, CSS y JS embebidos).
+- [`index.html`](index.html) — sitio completo (HTML, CSS y JS embebidos).
 
 ## Desarrollo local
 
@@ -21,7 +21,7 @@ Para previsualizar el sitio sin dependencias:
 
 ```powershell
 python -m http.server 8080
-# Abrir http://localhost:8080/tabaco.html
+# Abrir http://localhost:8080/
 ```
 
 ## Despliegue
