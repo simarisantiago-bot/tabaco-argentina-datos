@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ley de Tabaco Generación Libre de Humo | Argentina.gob.ar</title>
+<style>
+  :root{
+    --azul: #0072b8;
+    --azul-oscuro: #00305d;
+    --celeste: #e8f3fb;
+    --gris-bg: #f5f7fa;
+    --gris-texto: #2b2f33;
+    --rojo: #c52f3f;
+    --verde: #1e7a4c;
+    --naranja: #e08b00;
+    --borde: #d8e1e8;
+    --font-display: "Source Serif Pro", Georgia, "Times New Roman", serif;
+    --font-body: "Source Sans Pro", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    font-family: var(--font-body);
+    color: var(--gris-texto);
+    background: #fff;
+    line-height: 1.6;
+  }
+
+  a{ color: var(--azul); }
+
+  /* ---------- BARRA SUPERIOR GOBIERNO ---------- */
+  .gob-bar{
+    background: var(--azul-oscuro);
+    color:#fff;
+    font-size: 0.78rem;
+    padding: 6px 0;
+    letter-spacing:.04em;
+  }
+  .gob-bar .wrap{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .gob-bar .arg{
+    font-weight:700;
+    border-right: 1px solid rgba(255,255,255,.35);
+    padding-right: 10px;
+    margin-right: 2px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header.site{
+    background: var(--azul);
+    color: #fff;
+    padding: 28px 0 36px;
+  }
+  header.site .wrap{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .site-title{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin:0 0 6px;
+  }
+  .site-title .badge{
+    width: 46px; height:46px;
+    border-radius: 50%;
+    background:#fff;
+    color: var(--azul);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:1.3rem;
+    flex:0 0 auto;
+  }
+  .site-title h1{
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    margin:0;
+    font-weight: 700;
+    letter-spacing: .01em;
+  }
+  .site-title small{
+    display:block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity:.85;
+    margin-top:2px;
+  }
+
+  nav.tabs{
+    margin-top: 22px;
+    display:flex;
+    flex-wrap:wrap;
+    gap: 6px 4px;
+  }
+  nav.tabs a{
+    color:#fff;
+    text-decoration:none;
+    font-size:.88rem;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.12);
+    transition: background .15s ease;
+    white-space:nowrap;
+  }
+  nav.tabs a:hover{ background: rgba(255,255,255,.26); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background: var(--azul-oscuro);
+    color:#fff;
+    padding: 56px 0 60px;
+  }
+  .hero .wrap{
+    max-width: 1100px;
+    margin:0 auto;
+    padding: 0 24px;
+    display:grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    font-size:.78rem;
+    text-transform: uppercase;
+    letter-spacing:.14em;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.25);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .hero h2{
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    line-height:1.15;
+    margin: 0 0 18px;
+    font-weight:700;
+  }
+  .hero p{
+    font-size: 1.02rem;
+    max-width: 46ch;
+    opacity:.92;
+  }
+  .hero .stat-block{
+    background: rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius: 14px;
+    padding: 28px;
+    text-align:center;
+  }
+  .hero .stat-block .num{
+    font-family: var(--font-display);
+    font-size: 3.6rem;
+    font-weight:800;
+    line-height:1;
+    color: #ffd166;
+  }
+  .hero .stat-block .lbl{
+    margin-top:10px;
+    font-size: 0.95rem;
+    opacity:.9;
+  }
+  .hero .stat-block .src{
+    margin-top:14px;
+    font-size:.74rem;
+    opacity:.6;
+  }
+
+  /* ---------- SECCIONES ---------- */
+  main{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  section{
+    padding: 56px 0;
+    border-bottom: 1px solid var(--borde);
+  }
+  section:last-of-type{ border-bottom:none; }
+
+  .section-head{
+    margin-bottom: 32px;
+    max-width: 70ch;
+  }
+  .section-head .kicker{
+    font-size:.78rem;
+    text-transform: uppercase;
+    letter-spacing:.14em;
+    color: var(--azul);
+    font-weight:700;
+    margin-bottom: 8px;
+  }
+  .section-head h2{
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    margin: 0 0 10px;
+    color: var(--azul-oscuro);
+  }
+  .section-head p{
+    margin:0;
+    color:#555;
+  }
+
+  /* ---------- GRID DE TARJETAS ---------- */
+  .grid{
+    display:grid;
+    gap: 18px;
+  }
+  .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+  .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
+
+  .card{
+    background: var(--gris-bg);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .card .num{
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight:800;
+    color: var(--azul);
+    line-height:1;
+  }
+  .card.alert .num{ color: var(--rojo); }
+  .card.warn .num{ color: var(--naranja); }
+  .card.good .num{ color: var(--verde); }
+  .card .num small{ font-size: 1.1rem; font-weight:700; }
+  .card h3{
+    font-size: 1rem;
+    margin: 10px 0 6px;
+    color: var(--azul-oscuro);
+  }
+  .card p{
+    margin:0;
+    font-size: .92rem;
+    color:#555;
+  }
+  .card .src{
+    display:block;
+    margin-top:10px;
+    font-size:.74rem;
+    color:#888;
+  }
+  .card .src a{ color:#888; text-decoration: underline; }
+
+  /* ---------- BARRAS DE COMPARACIÓN ---------- */
+  .bars{
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .bar-row{
+    display:grid;
+    grid-template-columns: 200px 1fr 70px;
+    align-items:center;
+    gap: 12px;
+    font-size:.92rem;
+  }
+  .bar-row .label{ color: var(--azul-oscuro); font-weight:600; }
+  .bar-track{
+    background: var(--celeste);
+    border-radius: 999px;
+    height: 14px;
+    overflow:hidden;
+  }
+  .bar-fill{
+    height:100%;
+    border-radius: 999px;
+    background: var(--azul);
+  }
+  .bar-fill.rojo{ background: var(--rojo); }
+  .bar-fill.naranja{ background: var(--naranja); }
+  .bar-row .val{ text-align:right; font-weight:700; color: var(--azul-oscuro); }
+
+  /* ---------- TIMELINE ADOLESCENTES ---------- */
+  .timeline{
+    display:flex;
+    gap: 20px;
+    overflow-x:auto;
+    padding-bottom: 6px;
+  }
+  .timeline .tstep{
+    flex: 0 0 220px;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-left: 5px solid var(--azul);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .timeline .tstep .age{
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight:800;
+    color: var(--azul);
+  }
+  .timeline .tstep h4{ margin: 6px 0 4px; font-size:.95rem; color: var(--azul-oscuro); }
+  .timeline .tstep p{ margin:0; font-size:.85rem; color:#666; }
+
+  /* ---------- SIMULADOR ---------- */
+  .simulador{
+    background: linear-gradient(135deg, var(--azul-oscuro), var(--azul));
+    color:#fff;
+    border-radius: 18px;
+    padding: 40px;
+  }
+  .simulador .section-head h2{ color:#fff; }
+  .simulador .section-head .kicker{ color: #9fd6ff; }
+  .simulador .section-head p{ color: rgba(255,255,255,.85); }
+
+  .sim-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items:start;
+  }
+  .sim-control{
+    background: rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .sim-control label{
+    display:block;
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom: 10px;
+    opacity:.85;
+  }
+  .sim-control input[type=range]{
+    width:100%;
+    accent-color: #ffd166;
+  }
+  .sim-control .sim-value{
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight:800;
+    margin: 10px 0 4px;
+    color: #ffd166;
+  }
+  .sim-presets{
+    display:flex;
+    gap:8px;
+    margin-top:18px;
+    flex-wrap:wrap;
+  }
+  .sim-presets button{
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.3);
+    color:#fff;
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: .8rem;
+    cursor:pointer;
+    transition: background .15s ease;
+    font-family: inherit;
+  }
+  .sim-presets button:hover, .sim-presets button.active{
+    background: #ffd166;
+    color: var(--azul-oscuro);
+    border-color: #ffd166;
+    font-weight:700;
+  }
+  .sim-results{
+    display:grid;
+    gap: 14px;
+  }
+  .sim-results .res-card{
+    background: rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 16px;
+  }
+  .sim-results .res-card .res-label{ font-size:.88rem; opacity:.85; }
+  .sim-results .res-card .res-num{
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight:800;
+    color: #ffd166;
+    white-space:nowrap;
+  }
+  .sim-note{
+    margin-top: 18px;
+    font-size:.78rem;
+    opacity:.7;
+    max-width: 60ch;
+  }
+
+  /* ---------- POSTURAS / DEBATE ---------- */
+  .posturas{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .postura{
+    border-radius: 12px;
+    padding: 24px;
+    border:1px solid var(--borde);
+  }
+  .postura.favor{ border-top: 5px solid var(--verde); background: #f4faf6; }
+  .postura.contra{ border-top: 5px solid var(--rojo); background: #fdf5f5; }
+  .postura h3{ margin-top:0; color: var(--azul-oscuro); font-size: 1.1rem; }
+  .postura ul{ padding-left: 20px; margin: 0; font-size:.92rem; color:#444; }
+  .postura li{ margin-bottom: 8px; }
+
+  /* ---------- FUENTES ---------- */
+  .fuentes ul{
+    columns: 2;
+    column-gap: 40px;
+    padding-left: 18px;
+    font-size: .86rem;
+    color:#555;
+  }
+  .fuentes li{ margin-bottom: 10px; break-inside: avoid; }
+  .fuentes a{ word-break: break-all; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background: var(--azul-oscuro);
+    color: rgba(255,255,255,.8);
+    padding: 36px 0;
+    font-size: .85rem;
+  }
+  footer .wrap{
+    max-width: 1100px;
+    margin:0 auto;
+    padding:0 24px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap: 16px;
+  }
+  footer a{ color: #9fd6ff; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    .hero .wrap{ grid-template-columns: 1fr; }
+    .grid.cols-3, .grid.cols-2{ grid-template-columns: 1fr; }
+    .sim-grid{ grid-template-columns: 1fr; }
+    .posturas{ grid-template-columns: 1fr; }
+    .fuentes ul{ columns: 1; }
+    .bar-row{ grid-template-columns: 110px 1fr 60px; }
+  }
+
+  /* foco accesible */
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline: 3px solid #ffd166;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="gob-bar">
+  <div class="wrap">
+    <span class="arg">ARGENTINA.GOB.AR</span>
+    <span>Ministerio de Salud · Generación Libre de Humo</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <div class="site-title">
+      <div class="badge">AR</div>
+      <div>
+        <h1>Generación Libre de Humo</h1>
+        <small>Datos, evidencia y escenarios sobre el consumo de tabaco en Argentina</small>
+      </div>
+    </div>
+    <nav class="tabs">
+      <a href="#contexto">El proyecto de ley</a>
+      <a href="#consumo">Consumo general</a>
+      <a href="#adolescentes">Adolescentes</a>
+      <a href="#salud">Salud</a>
+      <a href="#economia">Costo económico</a>
+      <a href="#regulacion">Regulación por provincia</a>
+      <a href="#simulador">Simulador de impacto</a>
+      <a href="#debate">El debate</a>
+      <a href="#fuentes">Fuentes</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="contexto">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Proyecto de ley en el Congreso</span>
+      <h2>Una generación que no empezará a fumar.</h2>
+      <p>
+        El Gobierno nacional anunció el envío al Congreso de un proyecto de ley
+        que prohibiría la venta y el consumo de tabaco a todas las personas
+        nacidas a partir del año 2010. Quienes incumplan podrían recibir
+        multas económicas y restricciones de acceso a eventos deportivos y
+        musicales. La medida generó un fuerte rechazo de la industria
+        tabacalera. Esta página reúne los datos disponibles sobre el consumo
+        de tabaco en el país y simula posibles escenarios de reducción.
+      </p>
+    </div>
+    <div class="stat-block">
+      <div class="num">45.000</div>
+      <div class="lbl">muertes por año en Argentina asociadas al consumo de tabaco — el 14% del total de defunciones del país.</div>
+      <div class="src">Fuente: Ministerio de Salud / CAEME</div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <section id="consumo">
+    <div class="section-head">
+      <div class="kicker">Datos · Consumo general</div>
+      <h2>¿Cuánto se fuma en Argentina?</h2>
+      <p>Las distintas fuentes ofrecen cifras algo diferentes, pero coinciden en que entre el 20% y el 25% de la población adulta fuma, ubicando al país entre los de mayor consumo de la región.</p>
+    </div>
+
+    <div class="grid cols-3">
+      <div class="card alert">
+        <div class="num">25,6<small>%</small></div>
+        <h3>Población adulta fumadora</h3>
+        <p>Según una de las estimaciones más recientes, más de uno de cada cuatro adultos fuma tabaco en el país.</p>
+        <span class="src">Fuente: <a href="https://www.ospedyc.org/mas-del-25-de-la-poblacion-adulta-fuma-tabaco-en-argentina/" target="_blank" rel="noopener">OSPEDYC</a></span>
+      </div>
+      <div class="card warn">
+        <div class="num">9 M</div>
+        <h3>Personas fumadoras</h3>
+        <p>Se estima que en Argentina hay alrededor de 9 millones de fumadores, según datos de la Encuesta de Tabaquismo y entidades de salud.</p>
+        <span class="src">Fuente: <a href="https://www.caeme.org.ar/epidemia-de-tabaquismo-en-argentina-hay-9-millones-de-fumadores/" target="_blank" rel="noopener">CAEME</a></span>
+      </div>
+      <div class="card">
+        <div class="num">2°</div>
+        <h3>Lugar en Latinoamérica</h3>
+        <p>Argentina es el segundo país de la región donde más se fuma, detrás de Chile, con un consumo cercano a los 3.000 cigarrillos por persona al año.</p>
+        <span class="src">Fuente: <a href="https://www.clarin.com/informacion-general/pais-latinoamerica-fuma-3000-cigarrillos-ano-argentina_0_bQsMELBoMO.html" target="_blank" rel="noopener">Clarín</a></span>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3 style="margin-top:0;">Rango de estimaciones según la fuente</h3>
+      <div class="bars">
+        <div class="bar-row">
+          <div class="label">INDEC (2012)</div>
+          <div class="bar-track"><div class="bar-fill" style="width:20%"></div></div>
+          <div class="val">~20%</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">CAEME / IECS</div>
+          <div class="bar-track"><div class="bar-fill naranja" style="width:22%"></div></div>
+          <div class="val">~22%</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">OSPEDYC</div>
+          <div class="bar-track"><div class="bar-fill rojo" style="width:25.6%"></div></div>
+          <div class="val">25,6%</div>
+        </div>
+      </div>
+      <p style="margin-top:14px; font-size:.85rem; color:#777;">
+        Las diferencias entre fuentes se deben a metodologías y años de relevamiento distintos.
+        La encuesta del INDEC sobre tabaquismo es de 2012, lo que sugiere la necesidad de datos
+        más actualizados para diseñar políticas públicas.
+        Fuente: <a href="https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-32-69" target="_blank" rel="noopener">INDEC</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="adolescentes">
+    <div class="section-head">
+      <div class="kicker">Datos · Consumo en adolescentes</div>
+      <h2>El tabaco empieza temprano</h2>
+      <p>La mayoría de las personas que fuman comenzaron antes de los 18 años. Esta es la población que el proyecto de ley busca proteger de manera directa.</p>
+    </div>
+
+    <div class="grid cols-3">
+      <div class="card alert">
+        <div class="num">20,2<small>%</small></div>
+        <h3>Adolescentes de 13 a 15 años</h3>
+        <p>Es el porcentaje de adolescentes argentinos de entre 13 y 15 años que consume tabaco.</p>
+        <span class="src">Fuente: <a href="https://www.defensorba.org.ar/contenido/ninos-y-adolescentes-fumadores-cifras-alarmantes-y-politicas-ausentes-en-la-arge" target="_blank" rel="noopener">Defensoría del Pueblo de la PBA</a></span>
+      </div>
+      <div class="card warn">
+        <div class="num">~40<small>%</small></div>
+        <h3>Adolescentes porteños</h3>
+        <p>Casi 4 de cada 10 adolescentes de la Ciudad de Buenos Aires fumó alguna vez, con un consumo creciente de cigarrillos saborizados.</p>
+        <span class="src">Fuente: <a href="https://www.tiempoar.com.ar/ta_article/casi-el-40-de-los-adolescentes-portenos-fumo-en-algun-momento-y-crece-el-consumo-de-cigarrillos-saborizados/" target="_blank" rel="noopener">Tiempo Argentino</a></span>
+      </div>
+      <div class="card">
+        <div class="num">2°</div>
+        <h3>Lugar en América</h3>
+        <p>Argentina es el segundo país del continente con más adolescentes fumadores de entre 13 y 15 años.</p>
+        <span class="src">Fuente: Radio Mitre / OMS</span>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3 style="margin-top:0;">El camino hacia el primer cigarrillo</h3>
+      <div class="timeline">
+        <div class="tstep">
+          <div class="age">12-13</div>
+          <h4>Primer contacto</h4>
+          <p>La mayoría de los adolescentes que fuman probaron su primer cigarrillo entre los 12 y los 13 años.</p>
+        </div>
+        <div class="tstep">
+          <div class="age">52%</div>
+          <h4>Inicio entre 12 y 17</h4>
+          <p>De los adultos que fuman, más de la mitad comenzó a hacerlo durante la adolescencia, entre los 12 y los 17 años.</p>
+        </div>
+        <div class="tstep">
+          <div class="age">+80%</div>
+          <h4>Acceso sin control</h4>
+          <p>Pese a las prohibiciones, más del 80% de los menores logra comprar cigarrillos en kioscos sin verificación de edad.</p>
+        </div>
+        <div class="tstep">
+          <div class="age">x2–4</div>
+          <h4>Puerta de entrada: vapeadores</h4>
+          <p>Usar cigarrillos electrónicos multiplica entre 2 y 4 veces la probabilidad de empezar luego con cigarrillos tradicionales.</p>
+        </div>
+      </div>
+      <p style="margin-top:14px; font-size:.85rem; color:#777;">
+        Fuentes: <a href="https://www.asat.org.ar/situacion-del-tabaquismo-en-argentina/" target="_blank" rel="noopener">ASAT</a>,
+        <a href="https://www.sap.org.ar/docs/publicaciones/archivosarg/2015/v113n2a03.pdf" target="_blank" rel="noopener">Sociedad Argentina de Pediatría</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="salud">
+    <div class="section-head">
+      <div class="kicker">Datos · Impacto en la salud</div>
+      <h2>Lo que el tabaco le cuesta a la salud de los argentinos</h2>
+      <p>El tabaquismo es la principal causa evitable de enfermedad y muerte prematura en el país, y está asociado a las principales causas de mortalidad.</p>
+    </div>
+
+    <div class="grid cols-3">
+      <div class="card alert">
+        <div class="num">45.000</div>
+        <h3>Muertes anuales</h3>
+        <p>Cada año mueren alrededor de 45.000 personas en Argentina por enfermedades relacionadas con el tabaco.</p>
+        <span class="src">Fuente: <a href="https://www.argentina.gob.ar/salud/consumo-de-tabaco/efectos-tabaquismo" target="_blank" rel="noopener">Ministerio de Salud</a></span>
+      </div>
+      <div class="card warn">
+        <div class="num">226.000</div>
+        <h3>Personas enfermas por año</h3>
+        <p>Además de las muertes, el tabaco enferma a unas 226.000 personas por año en el país.</p>
+        <span class="src">Fuente: <a href="https://iecs.org.ar/cada-ano-el-tabaco-causa-45-000-muertes-y-enferma-a-226-000-personas-en-argentina/" target="_blank" rel="noopener">IECS</a></span>
+      </div>
+      <div class="card">
+        <div class="num">14<small>%</small></div>
+        <h3>De todas las muertes del país</h3>
+        <p>Las muertes asociadas al tabaco representan aproximadamente 1 de cada 7 muertes registradas en Argentina.</p>
+        <span class="src">Fuente: Ministerio de Salud</span>
+      </div>
+    </div>
+
+    <div class="grid cols-3" style="margin-top:18px;">
+      <div class="card">
+        <h3 style="margin-top:0;">❤️ Sistema cardiovascular</h3>
+        <p>Infartos y accidentes cerebrovasculares (ACV) están entre las principales causas de muerte vinculadas al tabaco.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">🫁 Enfermedades respiratorias</h3>
+        <p>EPOC y neumonías son consecuencias frecuentes del consumo sostenido de tabaco.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">🎗️ Cáncer</h3>
+        <p>El cáncer de pulmón y de otros órganos figura entre los principales efectos del tabaquismo a largo plazo.</p>
+      </div>
+    </div>
+    <p style="margin-top:14px; font-size:.85rem; color:#777;">
+      A nivel mundial, el consumo de tabaco es la principal causa de enfermedad, discapacidad y muerte prevenible: casi 8 millones de personas mueren cada año por su causa.
+      Fuente: <a href="https://www.argentina.gob.ar/salud/consumo-de-tabaco/danios-en-la-salud#1" target="_blank" rel="noopener">Argentina.gob.ar — Daños en la salud</a>
+    </p>
+  </section>
+
+  <section id="economia">
+    <div class="section-head">
+      <div class="kicker">Datos · Costo económico y ambiental</div>
+      <h2>¿Cuánto le cuesta el tabaco al Estado?</h2>
+      <p>Atender las enfermedades causadas por el tabaco representa una parte significativa del presupuesto de salud, mientras que lo recaudado por su venta no alcanza para cubrir esos gastos.</p>
+    </div>
+
+    <div class="grid cols-3">
+      <div class="card alert">
+        <div class="num">5<small>%</small></div>
+        <h3>Del presupuesto de salud</h3>
+        <p>El tabaquismo le cuesta a Argentina alrededor del 5% de todo el presupuesto destinado a salud.</p>
+        <span class="src">Fuente: <a href="https://www.ficargentina.org/nueva-evidencia-sobre-la-distribucion-de-la-carga-sanitaria-y-economica-del-tabaquismo-enargentina-por-nivel-socioeconomico/" target="_blank" rel="noopener">FIC Argentina</a></span>
+      </div>
+      <div class="card warn">
+        <div class="num">29<small>%</small></div>
+        <h3>Recaudación vs. gasto médico</h3>
+        <p>Lo que el Estado recauda por la venta de cigarrillos cubre apenas el 29% de los gastos médicos directos que generan las enfermedades asociadas.</p>
+        <span class="src">Fuente: FIC Argentina</span>
+      </div>
+      <div class="card">
+        <div class="num">$33.000 M</div>
+        <h3>Gasto en salud (2013)</h3>
+        <p>Ese año, el país gastó más de 33.000 millones de pesos en atender enfermedades producidas por el tabaco, el 7,5% del gasto total en salud.</p>
+        <span class="src">Fuente: <a href="https://www.caeme.org.ar/epidemia-de-tabaquismo-en-argentina-hay-9-millones-de-fumadores/" target="_blank" rel="noopener">CAEME</a></span>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3 style="margin-top:0;">🌱 Impacto ambiental</h3>
+      <p>
+        Además del costo sanitario, el humo y las colillas de cigarrillo —y también los residuos de vapeadores—
+        generan contaminación que afecta suelos, cursos de agua y calidad del aire, un problema ambiental
+        que suele quedar fuera del debate económico tradicional sobre el tabaco.
+      </p>
+      <span class="src">Fuente: <a href="https://www.infobae.com/america/medio-ambiente/2026/05/31/humo-y-colillas-de-cigarrillo-cuales-son-los-efectos-contaminantes-del-tabaco/" target="_blank" rel="noopener">Infobae</a></span>
+    </div>
+  </section>
+
+  <section id="regulacion">
+    <div class="section-head">
+      <div class="kicker">Datos · Regulación por jurisdicción</div>
+      <h2>No todas las provincias regulan igual</h2>
+      <p>Un estudio sobre 512 puntos de venta en cuatro ciudades argentinas comparó zonas con regulación restrictiva y zonas con regulación permisiva.</p>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="postura favor">
+        <h3>🚫 Regulación restrictiva</h3>
+        <p style="margin:0 0 10px; color:#444; font-size:.92rem;">Santa Rosa y Córdoba</p>
+        <ul>
+          <li>Prohibición total de publicidad de productos de tabaco.</li>
+          <li>Prohibición total de exhibición de productos en puntos de venta.</li>
+        </ul>
+      </div>
+      <div class="postura contra">
+        <h3>🛒 Regulación permisiva</h3>
+        <p style="margin:0 0 10px; color:#444; font-size:.92rem;">Quilmes y San Salvador de Jujuy</p>
+        <ul>
+          <li>Se rigen por la Ley Nacional vigente.</li>
+          <li>Permite exhibir productos y realizar ciertas formas de publicidad dentro de los locales.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3 style="margin-top:0;">Medidas recomendadas por el Convenio Marco de la OMS</h3>
+      <div class="grid cols-2" style="margin-top:10px;">
+        <div>
+          <p><strong>Prohibición total de publicidad</strong><br>Eliminar publicidad, promoción, patrocinio y exhibición de productos en puntos de venta.</p>
+        </div>
+        <div>
+          <p><strong>Regulación de sabores</strong><br>Prohibir saborizantes y cápsulas que resulten atractivos para menores.</p>
+        </div>
+        <div>
+          <p><strong>Políticas de precios</strong><br>Aumentar impuestos, ya que los jóvenes son el grupo más sensible a los cambios de precio.</p>
+        </div>
+        <div>
+          <p><strong>Ambientes 100% libres de humo</strong><br>Incluir explícitamente a los cigarrillos electrónicos para desnormalizar su uso.</p>
+        </div>
+      </div>
+      <p style="margin-top:14px; font-size:.85rem; color:#777;">
+        Muestra del estudio: 512 puntos de venta relevados, entre 105 y 146 locales por ciudad (Quilmes, San Salvador de Jujuy, Santa Rosa y Córdoba).
+        Fuente: <a href="https://www.asat.org.ar/situacion-del-tabaquismo-en-argentina/" target="_blank" rel="noopener">ASAT</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="simulador">
+    <div class="simulador">
+      <div class="section-head">
+        <div class="kicker">Escenarios · Proyección 2026–2050</div>
+        <h2>Simulador: ¿qué pasaría con una nueva generación libre de tabaco?</h2>
+        <p>
+          Esta herramienta estima, de forma ilustrativa, el impacto de reducir progresivamente la
+          incorporación de nuevos fumadores entre las personas nacidas desde 2010, tomando como base
+          los datos relevados: 9 millones de fumadores actuales, el 20,2% de adolescentes de 13 a 15
+          años que consume tabaco y 45.000 muertes anuales asociadas al tabaquismo.
+        </p>
+      </div>
+
+      <div class="sim-grid">
+        <div class="sim-control">
+          <label for="reduccion">Reducción estimada del inicio de consumo en la nueva generación</label>
+          <div class="sim-value"><span id="reduccion-valor">50</span>%</div>
+          <input type="range" id="reduccion" min="0" max="100" value="50" step="5">
+          <div class="sim-presets">
+            <button type="button" data-valor="20">Escenario bajo (20%)</button>
+            <button type="button" data-valor="50" class="active">Escenario medio (50%)</button>
+            <button type="button" data-valor="80">Escenario alto (80%)</button>
+            <button type="button" data-valor="100">Prohibición efectiva (100%)</button>
+          </div>
+          <p class="sim-note">
+            El "escenario alto" se acerca a la experiencia de jurisdicciones con regulación restrictiva
+            (Santa Rosa y Córdoba), donde la prohibición de publicidad y exhibición fue total.
+          </p>
+        </div>
+
+        <div class="sim-results">
+          <div class="res-card">
+            <div class="res-label">Nuevos fumadores adolescentes evitados por año (sobre el 20,2% de 13–15 años)</div>
+            <div class="res-num" id="res-adolescentes">—</div>
+          </div>
+          <div class="res-card">
+            <div class="res-label">Muertes anuales evitadas a largo plazo (sobre 45.000)</div>
+            <div class="res-num" id="res-muertes">—</div>
+          </div>
+          <div class="res-card">
+            <div class="res-label">Personas que no desarrollarían tabaquismo (sobre 9 millones)</div>
+            <div class="res-num" id="res-fumadores">—</div>
+          </div>
+          <div class="res-card">
+            <div class="res-label">Ahorro estimado en salud (sobre el 5% del presupuesto)</div>
+            <div class="res-num" id="res-ahorro">—</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="sim-note" style="margin-top:24px;">
+        Nota metodológica: los valores son proyecciones simplificadas con fines educativos e
+        ilustrativos, calculadas aplicando el porcentaje de reducción elegido sobre los indicadores
+        actuales de tabaquismo en adolescentes, mortalidad, prevalencia y gasto sanitario citados en
+        esta página. No constituyen una estimación oficial de impacto de la ley.
+      </p>
+    </div>
+  </section>
+
+  <section id="debate">
+    <div class="section-head">
+      <div class="kicker">Contexto · El debate público</div>
+      <h2>Una ley que divide opiniones</h2>
+      <p>El anuncio del proyecto generó posiciones encontradas entre el sector salud y el sector productivo e industrial.</p>
+    </div>
+
+    <div class="posturas">
+      <div class="postura favor">
+        <h3>✅ Argumentos a favor</h3>
+        <ul>
+          <li>El tabaco causa unas 45.000 muertes al año y enferma a 226.000 personas, según fuentes del Ministerio de Salud y del IECS.</li>
+          <li>La mayoría de quienes fuman comenzaron antes de los 18 años, por lo que actuar sobre las nuevas generaciones podría reducir la incidencia futura.</li>
+          <li>El costo fiscal de atender enfermedades por tabaquismo equivale al 5% del presupuesto de salud, mientras la recaudación por su venta cubre solo el 29% de ese gasto.</li>
+          <li>Más del 80% de los menores accede hoy a cigarrillos sin control de edad, lo que muestra los límites de las regulaciones actuales.</li>
+        </ul>
+      </div>
+      <div class="postura contra">
+        <h3>⚠️ Argumentos en contra / objeciones del sector</h3>
+        <ul>
+          <li>Empresas e industrias del sector tabacalero advierten impacto en el empleo formal e informal vinculado a la producción, distribución y venta.</li>
+          <li>Se cuestiona la efectividad de prohibir el consumo a partir de una fecha de nacimiento, dada la dificultad de control y el riesgo de mercado informal.</li>
+          <li>Sectores del comercio minorista (kioscos) señalan que una parte relevante de sus ingresos depende de la venta de cigarrillos.</li>
+          <li>Las sanciones sociales propuestas, como restringir el acceso a eventos deportivos o musicales, generan debate sobre su proporcionalidad y aplicabilidad.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="fuentes" class="fuentes">
+    <div class="section-head">
+      <div class="kicker">Referencias</div>
+      <h2>Fuentes consultadas</h2>
+      <p>Todos los datos de esta página provienen de organismos públicos, entidades de salud y medios periodísticos. Se recomienda consultar las fuentes originales para mayor detalle.</p>
+    </div>
+    <ul>
+      <li>OSPEDYC — <a href="https://www.ospedyc.org/mas-del-25-de-la-poblacion-adulta-fuma-tabaco-en-argentina/" target="_blank" rel="noopener">Más del 25% de la población adulta fuma tabaco en Argentina</a></li>
+      <li>INDEC — <a href="https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-32-69" target="_blank" rel="noopener">Encuesta sobre tabaquismo (2012)</a></li>
+      <li>CAEME — <a href="https://www.caeme.org.ar/epidemia-de-tabaquismo-en-argentina-hay-9-millones-de-fumadores/" target="_blank" rel="noopener">Epidemia de tabaquismo en Argentina: 9 millones de fumadores</a></li>
+      <li>Clarín — <a href="https://www.clarin.com/informacion-general/pais-latinoamerica-fuma-3000-cigarrillos-ano-argentina_0_bQsMELBoMO.html" target="_blank" rel="noopener">El país de Latinoamérica que más fuma después de Argentina</a></li>
+      <li>Radio Mitre — <a href="https://www.facebook.com/radiomitre/posts/-argentina-es-el-segundo-pa%C3%ADs-en-am%C3%A9rica-con-m%C3%A1s-adolescentes-fumadores-de-entre/1196469942516389/" target="_blank" rel="noopener">Argentina, segundo país de América con más adolescentes fumadores</a></li>
+      <li>Tiempo Argentino — <a href="https://www.tiempoar.com.ar/ta_article/casi-el-40-de-los-adolescentes-portenos-fumo-en-algun-momento-y-crece-el-consumo-de-cigarrillos-saborizados/" target="_blank" rel="noopener">Casi el 40% de los adolescentes porteños fumó alguna vez</a></li>
+      <li>ASAT — <a href="https://www.asat.org.ar/situacion-del-tabaquismo-en-argentina/" target="_blank" rel="noopener">Situación del tabaquismo en Argentina</a></li>
+      <li>Defensoría del Pueblo de la PBA — <a href="https://www.defensorba.org.ar/contenido/ninos-y-adolescentes-fumadores-cifras-alarmantes-y-politicas-ausentes-en-la-arge" target="_blank" rel="noopener">Niños y adolescentes fumadores: cifras alarmantes</a></li>
+      <li>Surenio — <a href="https://www.surenio.com.ar/tierra-del-fuego-tiene-el-mas-alto-indice-de-adolescentes-fumadores/" target="_blank" rel="noopener">Tierra del Fuego, la provincia con más adolescentes fumadores</a></li>
+      <li>HealthyChildren.org — <a href="https://www.healthychildren.org/Spanish/news/Paginas/The-Longer-Parents-Smoke-the-More-Likely-Their-Teens-are-to-Start-Smoking.aspx" target="_blank" rel="noopener">Cuanto más fuman los padres, más probable que sus hijos empiecen</a></li>
+      <li>CNN en Español — <a href="https://cnnespanol.cnn.com/2025/07/16/latinoamerica/video/argentina-chile-tabaquismo-oms-salud-cafe-tv" target="_blank" rel="noopener">Tabaquismo en Argentina y Chile según la OMS</a></li>
+      <li>Argentina.gob.ar — <a href="https://www.argentina.gob.ar/salud/consumo-de-tabaco/efectos-tabaquismo" target="_blank" rel="noopener">Efectos del tabaquismo</a></li>
+      <li>Argentina.gob.ar — <a href="https://www.argentina.gob.ar/salud/consumo-de-tabaco/danios-en-la-salud#1" target="_blank" rel="noopener">Daños del tabaco en la salud</a></li>
+      <li>IECS — <a href="https://iecs.org.ar/cada-ano-el-tabaco-causa-45-000-muertes-y-enferma-a-226-000-personas-en-argentina/" target="_blank" rel="noopener">El tabaco causa 45.000 muertes y enferma a 226.000 personas por año</a></li>
+      <li>FIC Argentina — <a href="https://www.ficargentina.org/nueva-evidencia-sobre-la-distribucion-de-la-carga-sanitaria-y-economica-del-tabaquismo-enargentina-por-nivel-socioeconomico/" target="_blank" rel="noopener">Carga sanitaria y económica del tabaquismo en Argentina</a></li>
+      <li>PMC / NCBI — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2629971/#main-content" target="_blank" rel="noopener">Paper sobre tabaco en Argentina</a></li>
+      <li>Infobae — <a href="https://www.infobae.com/america/medio-ambiente/2026/05/31/humo-y-colillas-de-cigarrillo-cuales-son-los-efectos-contaminantes-del-tabaco/" target="_blank" rel="noopener">Efectos contaminantes del tabaco y el vape</a></li>
+      <li>Sociedad Argentina de Pediatría — <a href="https://www.sap.org.ar/docs/publicaciones/archivosarg/2015/v113n2a03.pdf" target="_blank" rel="noopener">Inicio del consumo de tabaco en la adolescencia</a></li>
+      <li>Ministerio de Salud — <a href="https://iah.msal.gov.ar/doc/Documento165.pdf" target="_blank" rel="noopener">Encuesta Mundial de Tabaquismo en Jóvenes</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Sitio informativo no oficial elaborado con fines educativos a partir de fuentes públicas y periodísticas.</div>
+    <div>Generación Libre de Humo · Datos y escenarios sobre tabaquismo en Argentina</div>
+  </div>
+</footer>
+
+<script>
+  const slider = document.getElementById('reduccion');
+  const valorSpan = document.getElementById('reduccion-valor');
+  const presetButtons = document.querySelectorAll('.sim-presets button');
+
+  const BASE = {
+    adolescentes: 0.202,      // 20.2% de adolescentes 13-15
+    poblacionAdolescentes: 1800000, // estimación ilustrativa de población 13-15 años
+    muertes: 45000,
+    fumadores: 9000000,
+    presupuestoPct: 5 // % del presupuesto de salud
+  };
+
+  function formatNumero(n){
+    return Math.round(n).toLocaleString('es-AR');
+  }
+
+  function actualizar(valor){
+    valorSpan.textContent = valor;
+    const factor = valor / 100;
+
+    const adolescentesEvitados = BASE.poblacionAdolescentes * BASE.adolescentes * factor;
+    const muertesEvitadas = BASE.muertes * factor;
+    const fumadoresEvitados = BASE.fumadores * factor;
+    const ahorroPct = (BASE.presupuestoPct * factor).toFixed(1);
+
+    document.getElementById('res-adolescentes').textContent = formatNumero(adolescentesEvitados) + ' por año';
+    document.getElementById('res-muertes').textContent = formatNumero(muertesEvitadas) + ' por año';
+    document.getElementById('res-fumadores').textContent = formatNumero(fumadoresEvitados) + ' personas';
+    document.getElementById('res-ahorro').textContent = ahorroPct + '% del presupuesto de salud';
+
+    presetButtons.forEach(btn => {
+      btn.classList.toggle('active', Number(btn.dataset.valor) === Number(valor));
+    });
+  }
+
+  slider.addEventListener('input', (e) => actualizar(e.target.value));
+
+  presetButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.valor;
+      slider.value = v;
+      actualizar(v);
+    });
+  });
+
+  actualizar(slider.value);
+</script>
+
+</body>
+</html>
