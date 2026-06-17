@@ -473,16 +473,33 @@
     inset: 0;
     background: var(--azul);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 28px;
     z-index: 9999;
-    animation: splashFade 0.55s ease 1.7s forwards;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
   #splash img{
     width: min(80vmin, 720px);
     max-width: 92vw;
     height: auto;
     animation: splashIn 0.6s ease both;
+    pointer-events: none;
+  }
+  #splash .hint{
+    color: rgba(255,255,255,.85);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    animation: hintPulse 1.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  #splash.is-leaving{
+    animation: splashFade 0.5s ease forwards;
   }
   @keyframes splashIn{
     from{ opacity: 0; transform: scale(0.92); }
@@ -491,16 +508,21 @@
   @keyframes splashFade{
     to{ opacity: 0; visibility: hidden; }
   }
+  @keyframes hintPulse{
+    0%, 100%{ opacity: .35; }
+    50%     { opacity: .9; }
+  }
   @media (prefers-reduced-motion: reduce){
-    #splash{ animation-delay: 0.9s; animation-duration: 0.2s; }
-    #splash img{ animation: none; }
+    #splash img, #splash .hint{ animation: none; }
+    #splash.is-leaving{ animation-duration: 0.2s; }
   }
 </style>
 </head>
 <body>
 
-<div id="splash" role="presentation" aria-hidden="true">
+<div id="splash" role="button" tabindex="0" aria-label="Ingresar al sitio">
   <img src="logo-msal.png" alt="">
+  <span class="hint">Haga clic para ingresar</span>
 </div>
 
 <div class="gob-bar">
@@ -942,12 +964,24 @@
     const html = document.documentElement;
     const prevOverflow = html.style.overflow;
     html.style.overflow = 'hidden';
+    function leave(){
+      if(splash.classList.contains('is-leaving')) return;
+      splash.classList.add('is-leaving');
+    }
+    splash.addEventListener('click', leave);
+    splash.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' ' || e.key === 'Escape'){
+        e.preventDefault();
+        leave();
+      }
+    });
     splash.addEventListener('animationend', function(e){
       if(e.animationName === 'splashFade'){
         splash.remove();
         html.style.overflow = prevOverflow;
       }
     });
+    splash.focus({ preventScroll: true });
   })();
 
   const slider = document.getElementById('reduccion');
