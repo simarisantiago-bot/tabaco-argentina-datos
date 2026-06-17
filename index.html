@@ -400,23 +400,6 @@
     max-width: 60ch;
   }
 
-  /* ---------- POSTURAS / DEBATE ---------- */
-  .posturas{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-  }
-  .postura{
-    border-radius: 12px;
-    padding: 24px;
-    border:1px solid var(--borde);
-  }
-  .postura.favor{ border-top: 5px solid var(--verde); background: #f4faf6; }
-  .postura.contra{ border-top: 5px solid var(--rojo); background: #fdf5f5; }
-  .postura h3{ margin-top:0; color: var(--azul-oscuro); font-size: 1.1rem; }
-  .postura ul{ padding-left: 20px; margin: 0; font-size:.92rem; color:#444; }
-  .postura li{ margin-bottom: 8px; }
-
   /* ---------- FUENTES ---------- */
   .fuentes ul{
     columns: 2;
@@ -451,7 +434,6 @@
     .hero .wrap{ grid-template-columns: 1fr; }
     .grid.cols-3, .grid.cols-2{ grid-template-columns: 1fr; }
     .sim-grid{ grid-template-columns: 1fr; }
-    .posturas{ grid-template-columns: 1fr; }
     .fuentes ul{ columns: 1; }
     .bar-row{ grid-template-columns: 110px 1fr 60px; }
   }
@@ -532,7 +514,6 @@
       <a href="#economia">Costo económico</a>
       <a href="#regulacion">Regulación por provincia</a>
       <a href="#simulador">Simulador de impacto</a>
-      <a href="#debate">El debate</a>
       <a href="#fuentes">Fuentes</a>
     </nav>
   </div>
@@ -870,35 +851,6 @@
         actuales de tabaquismo en adolescentes, mortalidad, prevalencia y gasto sanitario citados en
         esta página. No constituyen una estimación oficial de impacto de la ley.
       </p>
-    </div>
-  </section>
-
-  <section id="debate">
-    <div class="section-head">
-      <div class="kicker">Contexto · El debate público</div>
-      <h2>Una ley que divide opiniones</h2>
-      <p>El anuncio del proyecto generó posiciones encontradas entre el sector salud y el sector productivo e industrial.</p>
-    </div>
-
-    <div class="posturas">
-      <div class="postura favor">
-        <h3>✅ Argumentos a favor</h3>
-        <ul>
-          <li>El tabaco causa unas 45.000 muertes al año y enferma a 226.000 personas, según fuentes del Ministerio de Salud y del IECS.</li>
-          <li>La mayoría de quienes fuman comenzaron antes de los 18 años, por lo que actuar sobre las nuevas generaciones podría reducir la incidencia futura.</li>
-          <li>El costo fiscal de atender enfermedades por tabaquismo equivale al 5% del presupuesto de salud, mientras la recaudación por su venta cubre solo el 29% de ese gasto.</li>
-          <li>Más del 80% de los menores accede hoy a cigarrillos sin control de edad, lo que muestra los límites de las regulaciones actuales.</li>
-        </ul>
-      </div>
-      <div class="postura contra">
-        <h3>⚠️ Argumentos en contra / objeciones del sector</h3>
-        <ul>
-          <li>Empresas e industrias del sector tabacalero advierten impacto en el empleo formal e informal vinculado a la producción, distribución y venta.</li>
-          <li>Se cuestiona la efectividad de prohibir el consumo a partir de una fecha de nacimiento, dada la dificultad de control y el riesgo de mercado informal.</li>
-          <li>Sectores del comercio minorista (kioscos) señalan que una parte relevante de sus ingresos depende de la venta de cigarrillos.</li>
-          <li>Las sanciones sociales propuestas, como restringir el acceso a eventos deportivos o musicales, generan debate sobre su proporcionalidad y aplicabilidad.</li>
-        </ul>
-      </div>
     </div>
   </section>
 
